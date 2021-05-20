@@ -59,6 +59,7 @@ class Button {
     console.log(this.value);
   }
 
+  // 相当于类字段
   // click2 = () => {
   //   console.log(this.value);
   // };
