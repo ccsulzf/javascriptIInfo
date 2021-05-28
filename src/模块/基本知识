@@ -1,0 +1,44 @@
+
+ * 模块：一个文件
+ * 模块可以相互加载，并可以使用export和import来交换功能
+ * export：标记可以从当前模 块外部访问的变量和函数
+ * import：从其他模块导入变量和函数
+
+ 始终使用"use strict" 
+ 每个模块都有自己的顶级作用域
+ 模块代码仅在第一次导入时被解析
+ 模块中的this是undefined
+ 模块脚本不会阻塞HTML的处理，与其他资源并行加载
+ 模块脚本会等到HTML文档完全准备就绪，然后才会运行
+ 保持脚本的相对顺序，文档中排在前面的会先执行
+
+<!-- 所有依赖都获取完成（analytics.js）然后脚本开始运行 -->
+<!-- 不会等待 HTML 文档或者其他 <script> 标签 -->
+ <script async type="module">
+  import {counter} from './analytics.js';
+
+  counter.count();
+</script>
+
+
+命名导出和默认导出
+
+命名导出 -- 强制使用正确的名称进行导入
+  export class User{}
+  import {User} from ...
+  import {MyUser} from ...  // error
+默认导出 -- 
+  export default class User {}
+  import User from ...
+  import MyUser from ... // crrect
+
+export * from './user.js' // 重新导出命名的导出
+export {default} from './user.js' // 重新导出默认的导出
+
+在{}中的import/export语句是无效的
+if(true){
+  import 
+}
+
+动态导入
+使用import()，是一种特殊语法，而不是函数
