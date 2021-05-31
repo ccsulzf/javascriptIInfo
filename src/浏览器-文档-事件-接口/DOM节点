@@ -1,0 +1,54 @@
+EventTarget
+  Node
+    Text(文本)
+    Comment(注释)
+    Element(元素节点)
+        HTMLElement
+          HTMLInputElement
+          HTMLBodyElement
+          ...
+        SVGElement
+
+elem.innerHTML 可以返回元素内部的HTML字符串
+elem.innerHTML = "<p>123</p>" 可以修改元素内的为当前字符串
+(当innerHTMLHTML)
+
+elem.outerHTML 可以返回元素的HTML字符串
+
+modeValue/data：文本节点内容
+
+(感觉这个属性很有用啊)
+textContent:获取元素内的纯文本
+textContent = "123123"
+
+hidden === display:none 给元素一个hidden，我看查看css时会有一个display:none
+
+DOM属性 && HTML特性
+当一个元素有id或其他标准的特性，那么就会生成对应的DOM属性
+
+DOM属性可以通过DOM元素去获取，element.id
+如果特性不是标准的，可以使用一下方法进行访问：
+elem.hasAttribute(name) — 检查特性是否存在。
+elem.getAttribute(name) — 获取这个特性值。
+elem.setAttribute(name, value) — 设置这个特性值。
+elem.removeAttribute(name) — 移除这个特性。
+
+    <h1 id="123" test="testhahah">测试</h1>
+   let h = document.querySelector("h1");
+    console.log(h.id);
+    console.log(h.test); // undefined
+    console.log(h.hasAttribute("test"))
+    console.log(h.hasAttribute("Test")) // 不区分大小写
+
+当一个标准的特性被改变，对应的属性也会自动更新
+也有例外，比如：input.value只能从特性同步到属性
+
+data-*特性保留只供程序员使用，可以在dataset中使用
+<h1 id="123" data-hello-world="Hello">测试</h1>
+let h = document.querySelector("h1");
+console.log(h.dataset['helloWorld']); // hello
+
+在css中使用,有点意思哦
+#123[data-hello-world="Hello"]{
+  color:red
+}

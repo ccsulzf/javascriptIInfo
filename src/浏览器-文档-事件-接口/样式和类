@@ -1,0 +1,20 @@
+可以获取和更改class
+document.body.className [="class name"]
+
+elem.classList.add/remove(class) - 添加/移除类
+elem.classList.toggle(class) - 如果类不存在就添加类，存在就移除
+elem.classList.contains(class) - 检查是否存在类
+
+样式
+驼峰命名
+ document.body.style.backgroundColor = 'red';
+ 浏览器前缀属性
+ -moz-border-radius 
+ button.style.MozBorderRadius = '5px';
+ 不要忽略单位px
+ 
+获取元素的样式属性：
+getComputedStyle(element,[psedudo])
+psedudo: 元素的伪元素
+ let style = getComputedStyle(document.body);
+  console.log(style.width);

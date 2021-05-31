@@ -1,0 +1,53 @@
+创建元素：
+document.createElement(tag)
+给定标签创建一个新的元素节点
+document.createTextNode(text)
+给定文本创建一个文本节点
+
+// 创建空的标签元素
+let div = document.createElement('div')
+
+// 给样式
+div.class = "test"
+
+// 给内容
+div.innerHTML = "hahah"
+
+<ol id="ol">
+  <li>0</li>
+  <li>1</li>
+  <li>2</li>
+</ol>
+
+<script>
+  ol.before('before'); // 将字符串 "before" 插入到 <ol> 前面
+  ol.after('after'); // 将字符串 "after" 插入到 <ol> 后面
+
+  let liFirst = document.createElement('li');
+  liFirst.innerHTML = 'prepend';
+  ol.prepend(liFirst); // 将 liFirst 插入到 <ol> 的最开始
+
+  let liLast = document.createElement('li');
+  liLast.innerHTML = 'append';
+  ol.append(liLast); // 将 liLast 插入到 <ol> 的最末尾
+</script>
+
+before
+prepend
+0
+1
+2
+append
+after
+
+节点移除
+
+移除节点
+node.remove()
+
+<p>123<stroong>456
+</strong><p/>
+//true 具有所有特性和子元素 false不包括子元素
+elem.cloneNode(false)
+上面这个为<p></p>
+

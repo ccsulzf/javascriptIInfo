@@ -1,0 +1,50 @@
+offsetLeft/offsetTop
+相较于offsetParent左上角的x/y坐标
+
+offsetParent：
+position 为 absolute，relative 或 fixed
+<td>，<th>，<table>，
+<body>
+
+offsetParent值为null
+对于未显示的元素（display:none 或者不在文档中）
+对于 <body> 与 <html>
+对于带有 position:fixed 的元素
+
+offsetWidth/offsetHeight
+元素的外部大小
+offsetWidth = width + paddingLeft/Right + borderLeft/Right
+offsetHeight = height + paddingTop/Bottom + borderTop/Bottom
+
+clientTop/Left：内侧与外侧的相对坐标
+当滚动条在右边时，clientLeft包含滚动条的高度
+
+clientWidth/Height
+元素边框内区域的大小
+
+clientWidth = width + paddingLeft/Right - 滚动条;
+clientHeight = height + paddingTop/Bottom;
+
+
+scrollWidth/Height
+scrollWidth = clientWidth + 滚动条隐藏的宽度
+scrollHeight = clientHeight + 滚动条隐藏的高度
+
+scrollLeft/scrollTop
+元素隐藏的滚动部分的width/height
+
+获取当前滚动
+window.pageXOffset/pageYOffset
+
+window.scrollBy(0,10); // 将页面滚动至相对于当前位置的(x,y)位置
+window.scrollTo(0,0); // 将页面滚动至绝对坐标(相较于文档左上角)
+
+
+elem.scrollIntoView(alignTop)
+alignTop = true(默认值) 将elem出现在窗口的顶部
+alignTop = false 将elem出现在窗口的底部
+
+
+document.body.style.overflow = "hidden" 禁止滚动
+document.body.style.overflow = ""       恢复滚动
+

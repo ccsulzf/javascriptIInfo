@@ -1,0 +1,63 @@
+遍历DOM
+
+document
+ document.documentElement
+  body
+    div
+    (
+      previousSibling(上一个兄弟)
+      nextSibling(下一个兄弟)
+      firstChild(第一个字节点)
+      lastChild(最后一个字节点)
+      childNodes(所有子节点)
+
+      +element是元素节点
+      不加是访问所有节点(文本，注释)
+    )
+
+DOM不是数组，而是一个类数组的集合，所有不能使用数组的方法，且这个集合是只可读的
+
+id是唯一的，如果有多个元素有同一个id,使用它的方法是不可预测的
+(document.getElementById() 如果有多个相同id的元素，总是返回第一个(Chrome))
+
+
+querySelector(.css): 返回给定CSS选择器的第一个元素
+document.querySelector(".test")
+
+elem.matcher(css): elem是否与给定的css相匹配
+elem.matches("div[class=test]") // 有一些匹配规则让这个还是蛮强大的
+
+elem.closeest(".book") 查找与css选择器匹配的最近的祖先
+
+
+getElementsByName 这个倒是蛮少用的
+<form name="testForm"></form>
+
+// 真的是奇奇怪怪(看下面这个例子)
+querySelector是静态的
+getElement是动态的(反应当前文档的动态，会进行实时更新)
+<div>First div</div>
+
+<script>
+  let divs = document.getElementsByTagName('div');
+  alert(divs.length); // 1
+</script>
+
+<div>Second div</div>
+
+<script>
+  alert(divs.length); // 2
+</script>
+
+<div>First div</div>
+
+<script>
+  let divs = document.querySelectorAll('div');
+  alert(divs.length); // 1
+</script>
+
+<div>Second div</div>
+
+<script>
+  alert(divs.length); // 1
+</script>
