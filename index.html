@@ -3,13 +3,62 @@
   <head>
     <title>Parcel Sandbox</title>
     <meta charset="UTF-8" />
+    <style>
+      ul {
+        display: flex;
+        list-style: none;
+        width: 9999px;
+        height: 130px;
+        margin: 0;
+        padding: 0;
+        transition: translateX 250ms;
+      }
+      img {
+        display: block;
+        width: 130px;
+        height: 130px;
+      }
+      .gallary {
+        width: 390px;
+        overflow: hidden;
+        border: 1px solid;
+      }
+    </style>
   </head>
 
   <body>
-    <div id="app">1</div>
-    <div id="app">2</div>
-    <div id="app">3</div>
+    <div class="gallary">
+      <ul>
+        <li><img src="https://en.js.cx/carousel/1.png" /></li>
+        <li><img src="https://en.js.cx/carousel/2.png" /></li>
+        <li><img src="https://en.js.cx/carousel/3.png" /></li>
+        <li><img src="https://en.js.cx/carousel/4.png" /></li>
+        <li><img src="https://en.js.cx/carousel/5.png" /></li>
+        <li><img src="https://en.js.cx/carousel/6.png" /></li>
+        <li><img src="https://en.js.cx/carousel/7.png" /></li>
+        <li><img src="https://en.js.cx/carousel/8.png" /></li>
+        <li><img src="https://en.js.cx/carousel/9.png" /></li>
+        <li><img src="https://en.js.cx/carousel/10.png" /></li>
+      </ul>
+    </div>
     <script>
+      let ul = document.querySelector("ul");
+
+      let n = 11;
+      let count = 3;
+      let width = 130;
+
+      // let interval = setInterval(() => {
+      //   if (count > n) {
+      //     count = n;
+      //     console.log(count);
+      //     ul.style.transform = `translateX(${-count * width}px)`;
+      //     count = 3;
+      //   } else {
+      //     ul.style.transform = `translateX(${-count * width}px)`;
+      //     count = count + 3;
+      //   }
+      // }, 1000);
       // console.log(document.getElementById("app"));
     </script>
   </body>

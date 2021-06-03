@@ -1,0 +1,15 @@
+clientX/Y：相较于浏览器窗口 elem.getBoundingClientRect()
+pageX/Y：相较于文档的位置 elem.getBoundingClientRect() + 页面滚动
+
+elem.getBoundingClientRect() 返回元素相较于窗口的坐标
+
+left = x
+top = y
+right = x+width(offsetWidth)
+bottom = y+height(offsetHeight)
+
+pageY = clientY + window.pageYOffset
+pageX = clientX + window.pageXOffset
+
+
+

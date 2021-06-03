@@ -38,6 +38,12 @@ querySelector是静态的
 getElement是动态的(反应当前文档的动态，会进行实时更新)
 <div>First div</div>
 
+// 蛮有用的
+Element.closest(selector)
+selector: "div" ".pane" "p:hover" 
+获取匹配特定选择器且离当前元素最近的祖先元素
+
+
 <script>
   let divs = document.getElementsByTagName('div');
   alert(divs.length); // 1

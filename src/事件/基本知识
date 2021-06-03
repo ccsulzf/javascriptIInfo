@@ -1,0 +1,38 @@
+鼠标事件
+键盘事件
+表单时间
+Document事件
+CSS事件
+
+事件处理
+HTML特性
+ <Button onclick="click()"></Button>
+DOM属性
+ <input id="elem" type="button" value="Click me">
+ elem.onclick = function() {
+    alert('Thank you');
+  };
+事件监听
+ elem.addEventListener(event,handler[,options]);
+ element.removeEventListener(event, handler[, options]);
+ 移除需要相同的函数
+
+ event: 事件名
+ handler：处理程序
+ options:{
+   once: true-触发后自动删除监听器
+   capture：事件处理阶段
+   passive：true - 处理程序不会调用preventDefault
+ }
+
+ handler，还可以是一个带handleEvent方法的对象
+ let obj = {
+   handleEvent(event){
+
+   }
+ }
+
+ elem.addEventListener('click',obj);
+
+
+
