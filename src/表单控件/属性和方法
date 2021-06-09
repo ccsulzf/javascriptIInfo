@@ -1,0 +1,15 @@
+document.form 文档中表单的特殊集合
+
+
+let myForm = document.form.my 取得我的表单
+<from name="my">
+  <input type="text" name="age">
+</form>
+
+获取表单元素，如果有多个相同名字的元素，则是一个集合
+myForm.elements.age === myForm.age
+
+元素也可以找到表单
+let age = myForm.elements.age;
+age.form ==== myForm
+

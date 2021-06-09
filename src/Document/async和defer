@@ -1,0 +1,27 @@
+当浏览器遇到<script>标签时，浏览器不能继续构建DOM，必须立刻执行该脚本，浏览器必须等脚本下载完，并执行结束，之后才能继续处理剩余的页面
+<p></p>
+<script src="...."></script>
+<p></p>
+
+问题：
+  脚本不能访问在它下面的DOM元素
+  阻塞页面
+
+一般处理都是将<script>放在body的最后面，但是对于长HTML，也有延迟
+
+defer:
+<p></p>
+<script defer src="...."></script>
+<p></p>
+
+defer 不会阻塞页面
+defer 脚本总是要等到DOM解析完毕，但在DOMCountentLoader事件之前执行
+defer 脚本保持相对顺序
+defer 仅适用于外部脚本
+
+async 不会阻塞页面
+async 先加载先执行
+async DOMContentLoaded不相关，可能在DOMContentLoaded之前执行完毕
+
+
+

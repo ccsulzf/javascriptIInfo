@@ -1,0 +1,11 @@
+谷歌浏览器我看都是打开一个新的标签页了
+let newWindow = Window.open(url,name,params);
+
+关闭弹窗
+newWinodw.close()
+
+弹窗是否关闭
+newWindow.closed
+
+
+

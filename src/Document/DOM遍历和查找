@@ -27,7 +27,7 @@ document.querySelector(".test")
 elem.matcher(css): elem是否与给定的css相匹配
 elem.matches("div[class=test]") // 有一些匹配规则让这个还是蛮强大的
 
-elem.closeest(".book") 查找与css选择器匹配的最近的祖先
+elem.closest(".book") 查找与css选择器匹配的最近的祖先
 
 
 getElementsByName 这个倒是蛮少用的

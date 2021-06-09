@@ -3,6 +3,8 @@ pageX/Y：相较于文档的位置 elem.getBoundingClientRect() + 页面滚动
 
 elem.getBoundingClientRect() 返回元素相较于窗口的坐标
 
+document.documentElement.clientHeight 获取当前浏览器的高度
+
 left = x
 top = y
 right = x+width(offsetWidth)

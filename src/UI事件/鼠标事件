@@ -1,0 +1,45 @@
+mousedown/mouseup: 点击/释放
+mouseover/mouseout: 移入/移出
+
+<body>
+  <div>
+  </div>
+</body>
+body -> div
+mouseover:
+  event.target:div
+  event.relatedTarget:body
+
+div -> body
+mouseout:
+  event.target: div
+  event.relatedTarget: body
+
+<div class="parent" onmouseover="mouselog(event)" onmouseout="mouselog(event)">
+  <div class="child">
+  </div>
+</div>
+
+body->parent->child
+mouseover [target: parent]
+mouseout [target: parent]
+mouseover [target: child]
+
+mouseenter/mouseleave与mouseover/mouseleave区别：
+  元素内部与后代之间的转换不会产生影响
+  不会冒泡（所以也不能进行事件委托）
+
+<div class="parent" onmouseenter="mouselog(event)" onmouseleave="mouselog(event)">
+  <div class="child">
+  </div>
+</div>
+
+body->parent->child
+mouseenter [target: parent]
+mouseleave [target: parent]
+
+mousemove：鼠标移动
+click：鼠标左键点击，在mousedown/mouseup之后
+contextmenu：鼠标右键点击，在mousedown/mouseup之间
+
+

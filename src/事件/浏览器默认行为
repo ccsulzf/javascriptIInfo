@@ -1,0 +1,7 @@
+浏览器默认行为：
+  点击a标签，跳转到href
+
+event.preventDefault() 阻止默认行为
+on<event>的处理函数，可以使用return false
+
+event.defaultPrevented 属性是否为true表示默认行为是否被阻止

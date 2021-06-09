@@ -1,0 +1,19 @@
+创建一个带回调函数的观察器
+let observer = new MutatonObserver(callback)
+
+附加到一个DOM节点
+observer.observe(node,config);
+
+true/false
+config 是一个具有布尔选项的对象，该布尔选项表示“将对哪些更改做出反应”：
+
+childList —— node 的直接子节点的更改，
+subtree —— node 的所有后代的更改，
+attributes —— node 的特性（attribute），
+attributeFilter —— 特性名称数组，只观察选定的特性。
+characterData —— 是否观察 node.data（文本内容），
+
+
+observer.disconnect() —— 停止观察。
+
+observer.takeRecords() —— 获取尚未处理的变动记录列表，表中记录的是已经发生，但回调暂未处理的变动。

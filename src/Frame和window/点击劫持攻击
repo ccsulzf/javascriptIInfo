@@ -1,0 +1,17 @@
+用户访问恶意页面
+页面内嵌一个iframe
+然后再内嵌的ifram上放置元素诱导用户进行点击
+其实用户是点击内嵌iframe中的元素，我们就可以拿到相关东西
+比如说http里面的token
+
+
+如何防御：
+X-Frame-Options可以允许或禁止在iframe中显示页面
+
+作为HTTP-header中发送
+
+DENY - 始终禁止在iframe中显示此页面
+SAMEORIGIN - 允许在和父文档同源的iframe中显示此页面
+ALLOW-FROM domian - 允许在来自给定域的父文档中的iframe中显示此页面
+
+

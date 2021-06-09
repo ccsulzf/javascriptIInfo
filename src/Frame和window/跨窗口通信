@@ -1,0 +1,28 @@
+一个<iframe>标签承载了一个单独的嵌入的窗口，具有自己的document和window
+
+iframe.contentWindow - iframe的window
+
+ifram.contentDocument - iframe的document
+
+当我们防伪潜入的窗口的东西时，浏览器会检查iframe是否具有相同的源
+
+iframe的sandbox特性允许在<iframe>中禁止某些特定行为
+
+// 允许在iframe中提交表单
+<iframe sandbox="allow-forms" src="./test.html">
+
+跨窗口通信
+
+iframe.contentWindow.postMessage(data,targetOrigin)
+targetOrigin指定目标窗口的源
+
+目标窗口
+window.addEventListener("message",function(event){
+
+})
+
+event
+  data - 传递过来的数据
+  origin - 发送方的源
+  source - 对发送窗口的引用
+
