@@ -1,0 +1,43 @@
+XMLHttpRequest发送请求的三个步骤
+
+1.创建XMLHttpRequest
+let xhr = new XMLHttpRequest();
+
+2.初始化
+xhr.open(method,URL,[async,user,password]);
+
+3.发送请求
+xhr.send([body])
+
+4.监听xhr事件以获取响应
+当前请求完成，并且响应已完全下载
+xhr.onload = fun();
+
+无法发出请求，网络中断或者无效URL
+xhr.onerror = fun();
+
+在下载响应期间定期出发，报告已经下载了多少
+xhr.onprogress = fun();
+xhr.onprogress = function(event) {
+  if (event.lengthComputable) {
+    alert(`Received ${event.loaded} of ${event.total} bytes`);
+  } else {
+    alert(`Received ${event.loaded} bytes`); // 没有 Content-Length
+  }
+};
+
+xhr随时都可以终止请求，xhr.abort()
+
+
+xhr跟踪上传事件 xhr.upload
+xhr.upload.onprogress = function(event) {
+  alert(`Uploaded ${event.loaded} of ${event.total} bytes`);
+};
+
+xhr.upload.onload = function() {
+  alert(`Upload finished successfully.`);
+};
+
+xhr.upload.onerror = function() {
+  alert(`Error during the upload: ${xhr.status}`);
+};
